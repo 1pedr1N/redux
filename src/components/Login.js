@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { Button, Form, Row, Col } from "react-bootstrap";
+import { useDispatch } from "react-redux";
+import { changeUser } from "../redux/userSlice";
 function Login() {
   const [name, setName] = useState("");
-
+const dispatch = useDispatch();
   const handleLogin = () => {
-    console.log("Login");
+   dispatch(changeUser(name));
   };
   return (
     <Form>

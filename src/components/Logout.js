@@ -1,8 +1,11 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 import { Button } from "react-bootstrap";
-function Logout() {
+import { logout } from "../redux/userSlice";
+function Logout() {const dispatch = useDispatch();
+  
   const handleLogout = () => {
-    console.log("Logout");
+    dispatch(logout());
   };
   return (
     <div>
